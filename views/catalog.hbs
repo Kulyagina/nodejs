@@ -1,0 +1,32 @@
+<h1>Каталог</h1>
+<hr/>
+{{#iftrue isAuth isAdmin}}
+    <a href="/add" class="uk-button uk-button-primary">Новый товар</a>
+    <hr />
+{{/iftrue}}
+{{#if goodses.length}}
+    <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match catalog-items" uk-grid>
+        {{#each goodses}}
+
+            <div class="uk-card uk-card-body uk-card-hover">
+                <a href="/catalog/{{id}}">
+                    <h1 class="uk-card-title">{{title}} </h1>
+                    <p class="uk-text-light descr-small uk-text-muted">{{descr}}</p>
+                    <img src="/img/{{pic}}" alt="">
+                </a>
+                <div class="wrapper-form">
+                    <p class="price uk-text-primary wrapper-form-elem">{{price}}</p>
+                    <button type="submit" class="uk-button-small uk-button-primary wrapper-form-elem ajax-add"
+                            data-id="{{id}}">
+                        Купить
+                    </button>
+                </div>
+            </div>
+
+
+        {{/each}}
+    </div>
+{{else}}
+    <p>Товаров пока нет...</p>
+{{/if}}
+

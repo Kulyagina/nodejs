@@ -1,0 +1,47 @@
+<h1>Добавить товар</h1>
+<hr>
+<div class="uk-child-width-1-2 uk-grid" uk-grid>
+    <div>
+        {{#if error}}
+            <div class="uk-alert-danger" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+                <p>{{error}}</p>
+            </div>
+        {{/if}}
+        <form action="/add" method="post" class="uk-form-stacked" enctype="multipart/form-data">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="g-title">Название товара</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="g-title" type="text" placeholder="Введите название товара" name="gtitle"
+                           required value="{{data.title}}">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-textarea" for="g-descr">Описание товара</label>
+                <div class="uk-form-controls">
+                <textarea class="uk-textarea" id="g-descr" type="text" rows="4" placeholder="Введите описание товара"
+                          name="gdescr">{{data.descr}}</textarea>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="g-price">Цена</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="g-price" type="number" placeholder="Введите цену" name="gprice" required
+                           min="1" value="{{data.price}}">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="g-pic">Изображение товара</label>
+                <div uk-form-custom="target: true">
+                    <input type="file" name="gpic">
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Изображение" required disabled name="gfile" value="{{data.pic}}">
+                    <button class="uk-button uk-button-default" type="button" tabindex="-1">Выбрать</button>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <button class="uk-button uk-button-primary">Добавить</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

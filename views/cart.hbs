@@ -1,0 +1,36 @@
+<h1>Корзина</h1>
+
+{{#if goodses.length}}
+    <div id="cart">
+        <table class="uk-table uk-table-divider uk-table-justify">
+            <thead>
+            <tr>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Общая сумма</th>
+                <th>Действия</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {{#each goodses}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td class="price">{{price}}</td>
+                    <td>{{count}}</td>
+                    <td class="price mult">{{mult count price}}</td>
+                    <td>
+                        <button class="uk-button-small uk-button-danger ajax-remove" data-id="{{_id}}">Удалить</button>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="uk-margin">
+        <strong>Цена:</strong><span class="price sum">{{sumPrice}}</span>
+    </div>
+{{else}}
+    <p>Корзина пуста</p>
+{{/if}}

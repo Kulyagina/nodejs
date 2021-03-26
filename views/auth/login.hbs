@@ -1,0 +1,84 @@
+<div class = "wrapper-form-auth">
+    <ul class="uk-subnav uk-subnav-pill uk-flex-left" uk-switcher>
+        <li{{#if isLogin}} class="uk-active" {{/if}}><a href="#" uk-switcher-item="signin">signin</a></li>
+        <li{{#unless isLogin}} class="uk-active" {{/unless}}><a href="#" uk-switcher-item="signup">signup</a></li>
+    </ul>
+    <ul class="uk-switcher uk-margin custom-padding">
+        <li>
+            <hr>
+            <h1>Авторизация в магазине</h1>
+            {{#if errSignin}}
+                <div class="uk-alert-danger" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p>{{errSignin}}</p>
+                </div>
+            {{/if}}
+            <div class="uk-child-width-1-2 uk-grid" uk-grid>
+                <form action="/auth/signin" method="post">
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="email">E-mail</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="email" type="text" placeholder="Введите E-mail" name="email"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="uk-margin uk-form-row">
+                        <label class="uk-form-label" for="password">Пароль</label>
+                        <div class="uk-form-password">
+                            <input type="password" class="uk-input" id="password" placeholder="Введите пароль"
+                                   name="password">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <input class="uk-button uk-button-primary" type="submit" value="Войти" />
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li>
+            <hr>
+            <h1>Регистрация в магазине</h1>
+            {{#if errSignup}}
+                <div class="uk-alert-danger" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p>"{{errSignup}}"</p>
+                </div>
+            {{/if}}
+            <div class="uk-child-width-1-2 uk-grid" uk-grid>
+                <form action="/auth/signup" method="post">
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="name">Имя</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="name" type="text" placeholder="Введите имя" name="name"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="email">E-mail</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="email" type="text" placeholder="Введите E-mail" name="email"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="uk-margin uk-form-row">
+                        <label class="uk-form-label" for="password">Пароль</label>
+                        <div class="uk-form-password">
+                            <input type="password" class="uk-input" id="password" placeholder="Введите пароль"
+                                   name="password">
+                        </div>
+                    </div>
+                    <div class="uk-margin uk-form-row">
+                        <label class="uk-form-label" for="repeat">Повторите пароль</label>
+                        <div class="uk-form-password">
+                            <input type="password" class="uk-input" id="repeat" placeholder="Повторите пароль"
+                                   name="repeat">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <input class="uk-button uk-button-primary" type="submit" value="Отправить" />
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,72 @@
+.uk-logo {
+   font-weight: 700;
+   font-size: 1rem;
+}
+
+.uk-logo img {
+   height: 36px;
+   margin-right: 10px;
+}
+
+.uk-active {
+   background: #eee;
+}
+
+
+.uk-card {
+   justify-content: center;
+   text-align: center;
+}
+
+.uk-card > .price{
+   font-weight: 600;
+   font-size: 1.3rem;
+}
+a:hover, a {
+   text-decoration: none;
+   color: black;
+}
+
+.card-detail img {
+   float:left;
+   width: 50%;
+}
+
+.card-detail {
+   justify-content: center;
+   text-align: center;
+}
+
+.card-detail .price {
+   justify-content: center;
+   text-align: center;
+   font-size: 1.3rem;
+   font-weight: 600;
+}
+
+.descr {
+   text-align: justify;
+}
+
+.card-action {
+   display: inline-block;
+}
+
+.wrapper-form {
+   text-align: center;
+   font-size: 1.2rem;
+   font-weight: 600;
+}
+
+.wrapper-form-elem{
+   display: inline-block;
+   margin: 0 10px;
+}
+
+.wrapper-form-auth > .uk-subnav{
+   margin-left: 0px;
+}
+
+.custom-padding > li{
+   padding-left: 20px;
+}

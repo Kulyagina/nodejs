@@ -1,0 +1,40 @@
+<h1>Добавить товар</h1>
+<hr>
+<div class="uk-child-width-1-2 uk-grid" uk-grid>
+    <form action="/catalog/edit" method="post" class="uk-form-stacked" enctype="multipart/form-data">
+        <input id="g-id" name="gid" type="hidden" value="{{goods.id}}" />
+        <div class="uk-margin">
+            <label class="uk-form-label" for="g-title">Название товара</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" id="g-title" type="text" placeholder="Введите название товара" name="gtitle"
+                       value="{{goods.title}}" required>
+            </div>
+        </div>
+        <div class="uk-margin">
+            <label class="uk-form-textarea" for="g-descr">Описание товара</label>
+            <div class="uk-form-controls">
+                <textarea class="uk-textarea" id="g-descr" type="text" rows="4" placeholder="Введите описание товара"
+                          name="gdescr">{{goods.descr}}</textarea>
+            </div>
+        </div>
+        <div class="uk-margin">
+            <label class="uk-form-label" for="g-price">Цена</label>
+            <div class="uk-form-controls">
+                <input class="uk-input" id="g-price" type="number" placeholder="Введите цену" name="gprice" required
+                       value="{{goods.price}}" min="1">
+            </div>
+        </div>
+        <div class="uk-margin ">
+            <label class="uk-form-label" for="g-pic">Изображение товара</label>
+            <div uk-form-custom="target: true">
+                <input type="file" name="gpic">
+                <input class="uk-input uk-form-width-medium" type="text" placeholder="Изображение" disabled name="gfile" value="{{goods.pic}}">
+                <button class="uk-button uk-button-default" type="button" tabindex="-1">Выбрать</button>
+            </div>
+        </div>
+        <div class="uk-margin">
+            <button class="uk-button uk-button-primary">Сохранить</button>
+        </div>
+    </form>
+</div>
+</div>
